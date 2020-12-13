@@ -9,7 +9,7 @@ import * as vscode from "vscode";
 export function activate(context: vscode.ExtensionContext) {
   // Use the console to output diagnostic information (console.log) and errors (console.error)
   // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "hello-world" is now active!');
+//   console.log('Congratulations, your extension "hello-world" is now active!');
 
   // The command has been defined in the package.json file
   // Now provide the implementation of the command with registerCommand
@@ -20,7 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
       // The code you place here will be executed every time your command is executed
 
       // Display a message box to the user
-      vscode.window.showInformationMessage("Hello World from hello-world!");
+    //   vscode.window.showInformationMessage("Hello World from hello-world!");
       const editor = vscode.window.activeTextEditor;
       if (!editor) {
         vscode.window.showInformationMessage("Editor does not axists!");
@@ -39,7 +39,7 @@ export function activate(context: vscode.ExtensionContext) {
       quickPick.items = data.map((x: any) => ({ label: x.word }));
       quickPick.onDidChangeSelection(([item]) => {
         if (item) {
-          vscode.window.showInformationMessage(item.label);
+        //   vscode.window.showInformationMessage(item.label);
           editor.edit((edit) => {
             edit.replace(editor.selection, item.label);
           });

@@ -19,14 +19,14 @@ const vscode = require("vscode");
 function activate(context) {
     // Use the console to output diagnostic information (console.log) and errors (console.error)
     // This line of code will only be executed once when your extension is activated
-    console.log('Congratulations, your extension "hello-world" is now active!');
+    //   console.log('Congratulations, your extension "hello-world" is now active!');
     // The command has been defined in the package.json file
     // Now provide the implementation of the command with registerCommand
     // The commandId parameter must match the command field in package.json
     let disposable = vscode.commands.registerCommand("hello-world.helloWorld", () => __awaiter(this, void 0, void 0, function* () {
         // The code you place here will be executed every time your command is executed
         // Display a message box to the user
-        vscode.window.showInformationMessage("Hello World from hello-world!");
+        //   vscode.window.showInformationMessage("Hello World from hello-world!");
         const editor = vscode.window.activeTextEditor;
         if (!editor) {
             vscode.window.showInformationMessage("Editor does not axists!");
@@ -40,7 +40,7 @@ function activate(context) {
         quickPick.items = data.map((x) => ({ label: x.word }));
         quickPick.onDidChangeSelection(([item]) => {
             if (item) {
-                vscode.window.showInformationMessage(item.label);
+                //   vscode.window.showInformationMessage(item.label);
                 editor.edit((edit) => {
                     edit.replace(editor.selection, item.label);
                 });
